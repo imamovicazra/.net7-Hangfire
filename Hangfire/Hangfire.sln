@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.API", "Hangfire.API\Hangfire.API.csproj", "{93399B90-3A24-4122-8A21-121971EA4DF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Model", "Hangfire.Model\Hangfire.Model.csproj", "{1F8212E1-F4D4-404B-AEA9-F56BE4798CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Database", "Hangfire.Database\Hangfire.Database.csproj", "{789D6DBE-BE05-4BB9-82D2-C48E0FDF1A01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{93399B90-3A24-4122-8A21-121971EA4DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93399B90-3A24-4122-8A21-121971EA4DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93399B90-3A24-4122-8A21-121971EA4DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8212E1-F4D4-404B-AEA9-F56BE4798CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8212E1-F4D4-404B-AEA9-F56BE4798CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8212E1-F4D4-404B-AEA9-F56BE4798CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8212E1-F4D4-404B-AEA9-F56BE4798CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789D6DBE-BE05-4BB9-82D2-C48E0FDF1A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789D6DBE-BE05-4BB9-82D2-C48E0FDF1A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789D6DBE-BE05-4BB9-82D2-C48E0FDF1A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789D6DBE-BE05-4BB9-82D2-C48E0FDF1A01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
