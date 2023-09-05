@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hangfire.Database.Migrations
 {
     [DbContext(typeof(HangfireContext))]
-    [Migration("20230904115931_init")]
+    [Migration("20230904134455_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -43,7 +43,7 @@ namespace Hangfire.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Drivers");
                 });
 #pragma warning restore 612, 618
         }

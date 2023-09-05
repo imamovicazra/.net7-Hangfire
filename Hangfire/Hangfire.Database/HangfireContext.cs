@@ -13,13 +13,13 @@ namespace Hangfire.Database
         {
         }
 
-        public virtual DbSet<Driver> Bookings { get; set; }
+        public virtual DbSet<Driver> Drivers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=HangfireDb;User Id=azra;Password=Password123!;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server=.;Database=HangfireDb;User Id=azra;Password=Password123!!;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true;");
             }
         }
     }

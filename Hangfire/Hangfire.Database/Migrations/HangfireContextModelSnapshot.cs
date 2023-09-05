@@ -40,7 +40,7 @@ namespace Hangfire.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Drivers");
                 });
 #pragma warning restore 612, 618
         }

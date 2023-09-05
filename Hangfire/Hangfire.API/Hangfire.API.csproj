@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="AutoMapper" Version="12.0.1" />
+	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
 	  <PackageReference Include="Hangfire.AspNetCore" Version="1.8.0-rc3" />
 	  <PackageReference Include="Hangfire.Core" Version="1.8.0-rc3" />
 	  <PackageReference Include="Hangfire.Dashboard.Basic.Authentication" Version="5.0.0" />
@@ -25,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hangfire.Database\Hangfire.Database.csproj" />
+    <ProjectReference Include="..\Hangfire.Service\Hangfire.Service.csproj" />
   </ItemGroup>
 
 </Project>

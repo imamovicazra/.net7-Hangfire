@@ -1,6 +1,8 @@
 using Hangfire;
 using Hangfire.API.Extensions;
 using Hangfire.Database;
+using Hangfire.Model.Interfaces;
+using Hangfire.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,12 +14,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<HangfireContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddHangfire(x =>
 {
     x.UseSqlServerStorage(builder.Configuration.GetConnectionString("DBConnection"));
 });
 builder.Services.AddHangfireServer();
+
+builder.Services.AddScoped<IDriverService,DriverService>();
 
 
 var app = builder.Build();
