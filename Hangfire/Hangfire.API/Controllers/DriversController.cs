@@ -18,7 +18,7 @@ namespace Hangfire.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(DriverDTO model)
+        public async Task<IActionResult> CreateDriver(DriverDTO model)
         {
             try
             {
@@ -36,6 +36,26 @@ namespace Hangfire.API.Controllers
                 _logger.LogError(ex, "Error occurred while processing");
                 return BadRequest(ex);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetDriver(Guid id)
+        {
+            var driver=await _driverService.GetDriverAsync(id);
+            if(driver is null)
+                return NotFound();
+            return Ok(driver);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteDriver(Guid id)
+        {
+            var driver = await _driverService.GetDriverAsync(id);
+            if (driver is null)
+                return NotFound();
+
+            await _driverService.DeleteDriverAsync(id);
+            return NoContent();
         }
     }
 }

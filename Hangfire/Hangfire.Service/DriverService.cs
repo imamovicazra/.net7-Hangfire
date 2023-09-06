@@ -3,6 +3,8 @@ using Hangfire.Database;
 using Hangfire.Model;
 using Hangfire.Model.DTOs;
 using Hangfire.Model.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 namespace Hangfire.Service
 {
@@ -25,6 +27,20 @@ namespace Hangfire.Service
             await _dbContext.SaveChangesAsync();
 
             return _mapper.Map<DriverDTO>(entity);
+        }
+
+        public async Task<DriverDTO> GetDriverAsync(Guid id)
+        {
+            var entity=await _dbContext.Drivers.Where(s => s.Id == id).FirstOrDefaultAsync();
+            return _mapper.Map<DriverDTO>(entity);
+        }
+        public async Task DeleteDriverAsync(Guid id)
+        {
+            var entity = await _dbContext.Drivers.Where(s => s.Id == id).FirstOrDefaultAsync();
+            entity.Status = 0;
+
+             _dbContext.Update(entity);
+            await _dbContext.SaveChangesAsync();
         }
     }
 

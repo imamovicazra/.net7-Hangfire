@@ -10,5 +10,7 @@ namespace Hangfire.Model.Interfaces
     public interface IDriverService
     {
         public Task<DriverDTO> Create(DriverDTO model);
+        public Task<DriverDTO> GetDriverAsync(Guid id);
+        public Task DeleteDriverAsync(Guid id)
     }
 }
