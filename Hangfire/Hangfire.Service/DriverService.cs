@@ -37,10 +37,12 @@ namespace Hangfire.Service
         public async Task DeleteDriverAsync(Guid id)
         {
             var entity = await _dbContext.Drivers.Where(s => s.Id == id).FirstOrDefaultAsync();
-            entity.Status = 0;
-
-             _dbContext.Update(entity);
-            await _dbContext.SaveChangesAsync();
+            if(entity != null && entity.Status!=0)
+            {
+                entity.Status = 0;
+                _dbContext.Update(entity);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 

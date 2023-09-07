@@ -23,6 +23,7 @@ builder.Services.AddHangfire(x =>
 builder.Services.AddHangfireServer();
 
 builder.Services.AddScoped<IDriverService,DriverService>();
+builder.Services.AddScoped<IServiceManagement, ServiceManagement>();
 
 
 var app = builder.Build();
