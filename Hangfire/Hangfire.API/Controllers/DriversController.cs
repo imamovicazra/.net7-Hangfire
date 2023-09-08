@@ -26,6 +26,7 @@ namespace Hangfire.API.Controllers
                     return BadRequest();
 
                 await _driverService.Create(model);
+                var jobId = BackgroundJob.Enqueue<IServiceManagement>(x => x.SendEmail());
 
                 _logger.LogInformation("Successful processing");
 
@@ -55,6 +56,7 @@ namespace Hangfire.API.Controllers
                 return NotFound();
 
             await _driverService.DeleteDriverAsync(id);
+            RecurringJob.AddOrUpdate<IServiceManagement>(x => x.UpdateDatabase(), Cron.Minutely);
             return NoContent();
         }
     }
